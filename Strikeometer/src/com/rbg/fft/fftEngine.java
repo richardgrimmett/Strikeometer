@@ -12,12 +12,12 @@ public class fftEngine {
 	public native void fft(DoubleBuffer Wav, int startsample, int winsize, int nframes, int nhops, int nfft, DoubleBuffer realOut);
 
 	static {
-		String property = System.getProperty("java.library.path");
-		StringTokenizer parser = new StringTokenizer(property, ";");
-		while (parser.hasMoreTokens()) {
-		    System.err.println(parser.nextToken());
-		}
-	    System.loadLibrary("rbgfft.dll");
+//		String property = System.getProperty("java.library.path");
+//		StringTokenizer parser = new StringTokenizer(property, ";");
+//		while (parser.hasMoreTokens()) {
+//		    System.err.println(parser.nextToken());
+//		}
+	    System.loadLibrary("rbgfft");
 	}
 	
 	static DoubleBuffer realOut; 
