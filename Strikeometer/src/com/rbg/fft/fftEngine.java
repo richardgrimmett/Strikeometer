@@ -3,6 +3,7 @@ package com.rbg.fft;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.DoubleBuffer;
+import java.util.StringTokenizer;
 
 import com.rbg.strike.Param;
 
@@ -11,7 +12,12 @@ public class fftEngine {
 	public native void fft(DoubleBuffer Wav, int startsample, int winsize, int nframes, int nhops, int nfft, DoubleBuffer realOut);
 
 	static {
-	      System.load("c:/code/rbgfft.dll");
+		String property = System.getProperty("java.library.path");
+		StringTokenizer parser = new StringTokenizer(property, ";");
+		while (parser.hasMoreTokens()) {
+		    System.err.println(parser.nextToken());
+		}
+	    System.loadLibrary("rbgfft.dll");
 	}
 	
 	static DoubleBuffer realOut; 
