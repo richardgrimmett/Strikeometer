@@ -39,7 +39,7 @@ public class Strike extends JFrame {
 		for (String name : names) {
 			if (dir) if (new File(topdir+"\\" + name).isDirectory()) {
 				combo.addItem(name);
-				System.out.println("Added "+name);
+//				System.out.println("Added "+name);
 			}
 		}
 	}	
